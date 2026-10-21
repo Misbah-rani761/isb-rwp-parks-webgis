@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GreenSpace Explorer | ISB–RWP</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">G</span><div><b>GreenSpace Explorer</b><small>ISLAMABAD · RAWALPINDI</small></div></div>
+  <button id="locateButton" class="btn light">◎ Locate Me</button>
+</header>
+
+<main class="layout">
+<aside class="sidebar">
+  <p class="eyebrow">URBAN GREEN INFRASTRUCTURE</p>
+  <h1>Parks &amp; Green Spaces</h1>
+  <p class="muted">Explore recreational green spaces across Pakistan's twin cities.</p>
+
+  <label for="searchInput">Search parks</label>
+  <input id="searchInput" type="search" placeholder="Enter park name...">
+
+  <label for="categorySelect">Filter by category</label>
+  <select id="categorySelect">
+    <option value="all">All green spaces</option>
+    <option value="park">Parks</option>
+    <option value="garden">Gardens</option>
+    <option value="recreation_ground">Recreation grounds</option>
+  </select>
+
+  <div class="stats">
+    <div class="stat"><span>Matching places</span><strong id="visibleCount">0</strong></div>
+    <div class="stat"><span>Total features</span><strong id="totalCount">0</strong></div>
+  </div>
+
+  <div class="results-heading"><h2>Explore Places</h2><span id="resultBadge">0</span></div>
+  <p id="resultsHint" class="muted small">Loading places...</p>
+  <div id="resultsList" class="results-list"></div>
+
+  <section class="legend">
+    <h2>Map Legend</h2>
+    <p><i class="dot park-dot"></i> Parks</p>
+    <p><i class="dot garden-dot"></i> Gardens</p>
+    <p><i class="dot recreation-dot"></i> Recreation grounds</p>
+  </section>
+
+  <button id="resetButton" class="btn light full">↺ Reset Map &amp; Filters</button>
+</aside>
+
+<section class="map-panel">
+  <div class="map-heading">
+    <div><p class="eyebrow">INTERACTIVE WEBGIS</p><h2>Explore the Twin Cities</h2></div>
+    <button id="refreshButton" class="btn primary">↻ Refresh Data</button>
+  </div>
+
+  <div id="statusBar" role="status">Connecting to OpenStreetMap data...</div>
+  <div id="map"></div>
+
+  <footer>
+    Data: OpenStreetMap / Overpass API · Map: Leaflet ·
+    <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors</a>
+  </footer>
+</section>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
